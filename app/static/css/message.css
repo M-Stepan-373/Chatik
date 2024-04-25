@@ -1,0 +1,33 @@
+.message {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.message-1 {
+    display: block;
+    width: 80%;
+    padding: 16px;
+    text-align: start;
+}
+
+.message-2 {
+    width: 15%;
+    padding: 16px;
+    text-align: end;
+}
+
+.text {
+    font-family: sans-serif, arial, helvetica;
+}
+
+.time {
+    text-align: right;
+    font-family: sans-serif, arial, helvetica;
+    color: grey;
+}
+
+.author {
+    font-family: sans-serif, arial, helvetica;
+    font-weight: bold;
+}

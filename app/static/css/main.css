@@ -1,0 +1,8 @@
+html, body {
+    font-family: sans-serif, arial, helvetica;
+}
+
+* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+}

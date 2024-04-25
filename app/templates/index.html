@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+        <title>Чатик</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/main.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='/css/message.css') }}" />
+    </head>
+    <body>
+        <form method="post">
+            <label></label>
+            <input type="text" name="message" required />
+            <button type="submit">Отправить!</button>
+        </form>
+        {% if error == 1 %}
+            <p>Сообщение слишком длинное</p>
+        {% endif %}
+        <a href="/">Обновить</a>
+        {% for msg in messages %}
+            <div class="message">
+                <div class="message-1">
+                    <span class="author">{{ msg.author }}</span>
+                    <span class="text">{{ msg.content }}</span>
+                </div>
+                <div class="message-2">
+                    <span class="time">{{ msg.time }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </body>
+</html>
