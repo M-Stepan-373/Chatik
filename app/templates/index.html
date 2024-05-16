@@ -19,6 +19,7 @@
         {% endif %}
         <a href="/">Обновить</a>
         {% for msg in messages %}
+	    {% if not msg.is_gif %}
             <div class="message">
                 <div class="message-1">
                     <span class="author">{{ msg.author }}</span>
@@ -28,6 +29,16 @@
                     <span class="time">{{ msg.time }}</span>
                 </div>
             </div>
+	    {% else %}
+	    <div class="message">
+		    <div class="message-1">
+			    <img src="{{ msg.content }}" width=300>
+		    </div>
+		    <div class="message-2">
+			    <span class="time">{{ msg.time }}</span>
+		    </div>
+	    </div>
+	    {% endif %}
         {% endfor %}
     </body>
 </html>
