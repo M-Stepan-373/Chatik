@@ -4,11 +4,13 @@ class Message:
     content: str
     time: str
     author: str
+    is_gif: bool
 
-    def __init__(self, *, content: str, time: str, author: str):
+    def __init__(self, *, content: str, time: str, author: str, is_gif: bool):
         self.content = content
         self.time = time
         self.author = author
+        self.is_gif = is_gif
 
 class Database:
     def __init__(self, filename='./database.json'):
@@ -25,6 +27,7 @@ class Database:
             'content': msg.content, 
             'time': msg.time,
             'author': msg.author,
+            'is_gif': msg.is_gif,
             'id': self.get_db_size()
         }
 
@@ -34,6 +37,7 @@ class Database:
             content=value['content'],
             time=value['time'],
             author=value['author'],
+            is_gif=value['is_gif'],
         )
     
     def get_db_size(self):
